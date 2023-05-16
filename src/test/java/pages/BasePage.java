@@ -1,6 +1,6 @@
 package pages;
 
-//import org.junit.Assert;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,7 +23,6 @@ public class BasePage {
 
     
     static {
-        System.setProperty("webdriver.chrome.driver", "C:/Users/RonalOlate/Desktop/Proyectos/Selenium/driver/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));

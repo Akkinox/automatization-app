@@ -1,28 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Probar la busqueda en Google" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-05-11T13:47:03" hostname="DESKTOP-HMLOSED" time="4.804">
+<testsuite name="Probar la busqueda en Google" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-16T03:03:18" hostname="ronalolates-MacBook-Pro.local" time="7.578">
   <properties/>
-  <testcase name="Busco algo en Google" classname="Probar la busqueda en Google" time="4.804">
-    <failure message="io.cucumber.junit.UndefinedStepException: The step 'Obtengo resultados' is undefined.&#10;You can implement this step using the snippet(s) below:&#10;&#10;@Then(&quot;Obtengo resultados&quot;)&#10;public void obtengo_resultados() {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;" type="io.cucumber.junit.UndefinedStepException">io.cucumber.junit.UndefinedStepException: The step 'Obtengo resultados' is undefined.
-You can implement this step using the snippet(s) below:
-
-@Then(&quot;Obtengo resultados&quot;)
-public void obtengo_resultados() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-</failure>
-  </testcase>
+  <testcase name="Busco algo en Google" classname="Probar la busqueda en Google" time="7.578"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 112.0.5615.49 (bd2a7bcb881c11e8cfe3078709382934e3916914-refs/branch-heads/5615@{#936}) on port 20570
+Starting ChromeDriver 113.0.5672.63 (0e1a4471d5ae5bf128b1bd8f4d627c8cbd55f70c-refs/branch-heads/5672@{#912}) on port 11733
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1683812825.357][WARNING]: This version of ChromeDriver has not been tested with Chrome version 113.
-may. 11, 2023 9:47:05 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+may. 15, 2023 11:03:25 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 113, so returning the closest version found: 111
 ]]></system-err>
 </testsuite>
