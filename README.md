@@ -1,18 +1,50 @@
-## Getting Started
+## PARA EMPEZAR
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Bienvenido a esta app de prueba de automatización
 
-## Folder Structure
+## DEPENDENCIAS
 
-The workspace contains two folders by default, where:
+- Java JDK (Version 15) *funciona de igual manera con la actual 17 
+- gradle 
+- Descargar chromedriver (De todas manera dejare descargado el archivo en la carpeta).
+- Git
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## COMANDOS PARA MAC
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Instalación de gradle:
+ - brew install gradle
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Instalación de git:
 
-## Dependency Management
+ - brew install git
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Instalación de gradle en windows
+
+- Descargar Gradle.
+- Descomprimir el archivo en C: o donde prefieran (les recomiendo directamente en el C). 
+- Renombra La carpeta extraída como gradle.
+- Ingresa a panel de control -> Sistema -> Configuración avanzada del sistema -> Variables de entorno
+- Otra alternativa es ejecutando el comando ENV al tocar la lupa de Windows van a llegar a donde configuramos las locaciones de JAVA HOME, Gradle entre otros.
+- Añadimos C:\gradle\bin a la variable PATH
+
+## Configuración de chromedriver
+
+## En Windows
+
+Toda esta configuración quedará lista, solo debes descomentar la linea de codigo 26 del archivo BasePage.java
+
+En MacOS:
+
+- Ejecutar la Terminal.
+- Escribir la siguiente sentencia en nuestra consola "sudo nano /etc/paths".
+- Debes ingresar con contraseña al archivo para editar.
+- Posicionate en el final del archivo y añade el path del WebDriver en mi caso:
+  "/Users/ronal.olate/IdeaProjects/automatization-app/utilidades/Mac/chromedriver".
+- Control + x para salir, presionamos 'y' para salvar y enter para confirmar. 
+- ejecutamos "echo $PATH" para verificar que quedo bien guardado
+
+
+## Comando de gradle
+
+Ejecutamos "gradle clean" para eliminar residuos y ejecutamos "gradle build" para generar 
+las dependecias para ejecutar nuestro proyecto

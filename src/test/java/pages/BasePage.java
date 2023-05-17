@@ -23,6 +23,7 @@ public class BasePage {
 
     
     static {
+        //System.setProperty("webdriver.chrome.driver", "/Users/ronal.olate/IdeaProjects/automatization-app/utilidades/Windows/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
