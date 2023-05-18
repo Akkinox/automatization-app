@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import java.time.Duration;
+import java.util.ArrayList;
 
 public class BasePage {
 
@@ -28,7 +29,7 @@ public class BasePage {
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
-    
+
     public BasePage(WebDriver driver){
         BasePage.driver = driver;
         PageFactory.initElements(driver, this);
@@ -36,6 +37,10 @@ public class BasePage {
     }
 
     public static void navigateToGoogle(String url) {
+        driver.get(url);
+    }
+
+    public static void navigateToBanco(String url) {
         driver.get(url);
     }
 
@@ -114,5 +119,18 @@ public class BasePage {
 
     public boolean elementIsSelected(String locator){
         return Find(locator).isSelected();
+    }
+
+    public ArrayList contarEtiquetasH1() {
+        // Encontrar todas las etiquetas H1
+        java.util.List<WebElement> h1Tags = driver.findElements(By.tagName("h1"));
+
+        // Imprimir la cantidad de etiquetas H1
+        System.out.println("Cantidad de etiquetas H1: " + h1Tags.size());
+
+        // Imprimir los textos de las etiquetas H1
+        for (WebElement h1Tag : h1Tags) {
+            System.out.println("Texto: " + h1Tag.getText());
+        }
     }
 }

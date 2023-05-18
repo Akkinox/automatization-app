@@ -3,20 +3,20 @@ package steps;
 import org.junit.Assert;
 
 import io.cucumber.java.en.*;
-import pages.GooglePage;
+import pages.BancoPage;
 
-public class GoogleSteps {
+public class BancoSteps {
     
-    GooglePage google = new GooglePage();
+    BancoPage google = new BancoPage();
 
-    @Given("^navego en google$")
-    public void navigateToGoogle(){
-        google.navigateToGoogle();
+    @Given("^Busco la url del banco central en google$")
+    public void navigateToBanco(){
+        google.navigateToBanco();
     }
 
-    @When("^Busco algun criterio de busqueda$")
+    @When("^Encuentro la pagina del banco realizo un recuento de h1 en la pagina y contenido$")
     public void enterSearchCriteria(){
-
+        google.contadorH1();
     }
 
     @And("^Hago click en el boton de busqueda$")
