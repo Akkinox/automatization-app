@@ -1,6 +1,8 @@
 package pages;
 
+import java.util.List;
 import org.junit.Assert;
+import java.util.ArrayList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -121,16 +123,15 @@ public class BasePage {
         return Find(locator).isSelected();
     }
 
-    public ArrayList contarEtiquetasH1() {
-        // Encontrar todas las etiquetas H1
-        java.util.List<WebElement> h1Tags = driver.findElements(By.tagName("h1"));
+    public void obtenerH1(String locator){
 
-        // Imprimir la cantidad de etiquetas H1
-        System.out.println("Cantidad de etiquetas H1: " + h1Tags.size());
-
-        // Imprimir los textos de las etiquetas H1
+        List<WebElement> h1Tags = driver.findElements(By.tagName("h1"));
+        System.out.println("Cantidad de etiquetas h1: " + h1Tags.size());
         for (WebElement h1Tag : h1Tags) {
             System.out.println("Texto: " + h1Tag.getText());
         }
     }
+
+
+
 }

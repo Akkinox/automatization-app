@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class BancoPage extends BasePage{
 
     public BancoPage(){
@@ -15,7 +17,7 @@ public class BancoPage extends BasePage{
     }
 
     public void contadorH1(){
-        contarEtiquetasH1();
+
     }
 
 }
