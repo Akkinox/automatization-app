@@ -1,8 +1,7 @@
 package pages;
 
 import java.util.List;
-import org.junit.Assert;
-import java.util.ArrayList;
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,8 +14,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-import java.time.Duration;
-import java.util.ArrayList;
 
 public class BasePage {
 
@@ -124,7 +121,6 @@ public class BasePage {
     }
 
     public void obtenerH1(String locator){
-
         List<WebElement> h1Tags = driver.findElements(By.tagName("h1"));
         System.out.println("Cantidad de etiquetas h1: " + h1Tags.size());
         for (WebElement h1Tag : h1Tags) {
