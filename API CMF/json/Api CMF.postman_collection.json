@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "01d354ef-18d1-47b6-bf62-6ade467201b6",
+		"name": "Api CMF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27449502"
+	},
+	"item": [
+		{
+			"name": "Dolar Año Anterior",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Respues se proceso en menos de 500 milisegundos\r",
+							"\r",
+							"pm.test(\"La respuesta se procesó en menos de 500 milisegundos\", function() {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"// Validar que la respuesta contenga un texto que diga Dolares\r",
+							"\r",
+							"pm.test(\"La respuesta contiene la palabra 'Dolares'\", function() {\r",
+							"    const responseData = pm.response.json();\r",
+							"    const responseDataStr = JSON.stringify(responseData);\r",
+							"    pm.expect(responseDataStr).to.include(\"Dolares\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"// Validar que la fecha es el 31 de Agosto del año anterior\r",
+							"\r",
+							"pm.test(\"La respuesta contiene datos para el 31 de agosto de 2022\", function() {\r",
+							"    const responseData = pm.response.json();\r",
+							"    const expectedDate = new Date(\"2022-08-31\");\r",
+							"    const dateStr = expectedDate.toISOString().slice(0, 10);\r",
+							"    if(responseData.Dolares[0].Fecha == dateStr){\r",
+							"        pm.expect(`No se encontraron datos para la fecha ${dateStr}`);\r",
+							"    } else {\r",
+							"        pm.expect.fail(`No se encontraron datos para la fecha ${dateStr}`);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://api.cmfchile.cl/api-sbifv3/recursos_api/dolar/2022/08/dias/31?apikey={{APIKEY}}&formato=json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cmfchile",
+						"cl"
+					],
+					"path": [
+						"api-sbifv3",
+						"recursos_api",
+						"dolar",
+						"2022",
+						"08",
+						"dias",
+						"31"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{APIKEY}}"
+						},
+						{
+							"key": "formato",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Euro día actual",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Validar que la respuesta contenta un encabezado \"ContentType\" en el header\r",
+							"\r",
+							"pm.test(\"La respuesta contiene el encabezado 'Content-Type' en el header\", function() {\r",
+							"    pm.expect(pm.response.headers.has(\"Content-Type\"));\r",
+							"});\r",
+							"\r",
+							"// Validar que la respuesta contenga un texto con la palabra Euros\r",
+							"\r",
+							"pm.test(\"La respuesta contiene la palabra 'Euros'\", function() {\r",
+							"    const responseData = pm.response.json();\r",
+							"    const responseDataStr = JSON.stringify(responseData);\r",
+							"    pm.expect(responseDataStr).to.include(\"Euros\");\r",
+							"});\r",
+							"\r",
+							"// Validar que no haya valores nulos en los campos Valor y Fecha\r",
+							"\r",
+							"pm.test(\"El campo 'Valor' no está nulo\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.Euros['0'].Valor).to.not.eql(null);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El campo 'Fecha' no está nulo\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.Euros['0'].Fecha).to.not.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.cmfchile.cl/api-sbifv3/recursos_api/euro?apikey={{APIKEY}}&formato=json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cmfchile",
+						"cl"
+					],
+					"path": [
+						"api-sbifv3",
+						"recursos_api",
+						"euro"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{APIKEY}}"
+						},
+						{
+							"key": "formato",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APIKEY",
+			"value": "6f928f1e84dfb30ebd205a4a1a46182ab9e1607e"
+		}
+	]
+}
