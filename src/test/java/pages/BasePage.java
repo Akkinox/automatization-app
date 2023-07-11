@@ -140,6 +140,27 @@ public class BasePage {
         } else {
             System.out.println("Error en el título");
         }
+        // Obtener el valor de la UF
+        WebElement ufElement = driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/div/div[1]/section/div/div[2]/div/div/div/div/div[1]/div/div/div[1]/div/p[2]"));
+        String ufValue = ufElement.getText();
+        System.out.println("Valor de la UF: " + ufValue);
+        
+        // Obtener el valor de la UTM
+        WebElement utmElement = driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/div/div[1]/section/div/div[2]/div/div/div/div/div[1]/div/div/div[2]/div/p[2]"));
+        String utmValue = utmElement.getText();
+        System.out.println("Valor de la UTM: " + utmValue);
+        
+        // Obtener el valor del Dólar observado
+        WebElement dolarElement = driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/div/div[1]/section/div/div[2]/div/div/div/div/div[1]/div/div/div[3]/div/p[2]"));
+        String dolarValue = dolarElement.getText();
+        System.out.println("Valor del Dólar observado: " + dolarValue);
+        
+        // Obtener el valor del Euro
+        WebElement euroElement = driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/div/div[1]/section/div/div[2]/div/div/div/div/div[1]/div/div/div[4]/div/p[2]"));
+        String euroValue = euroElement.getText();
+        System.out.println("Valor del Euro: " + euroValue);
+        
+
     }
 
     
