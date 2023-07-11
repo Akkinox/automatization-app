@@ -10,8 +10,8 @@ public class BancoPage extends BasePage{
         navigateToBanco("http://www.bcentral.cl/");
     }
 
-    public void contadorH1(){
-
+    public void ejerciciosPrueba(){
+        ejeciciosPrueba("h1", "p");
     }
 
 }

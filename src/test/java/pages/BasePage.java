@@ -120,14 +120,29 @@ public class BasePage {
         return Find(locator).isSelected();
     }
 
-    public void obtenerH1(String locator){
-        List<WebElement> h1Tags = driver.findElements(By.tagName("h1"));
-        System.out.println("Cantidad de etiquetas h1: " + h1Tags.size());
+    public void ejeciciosPrueba(String locator, String locator2){
+        // recuento y muestra de etiquetas <h1>
+        List<WebElement> h1Tags = driver.findElements(By.tagName(locator));
+        System.out.println("Cantidad de etiquetas h1 que existen en la pagina son: " + h1Tags.size());
         for (WebElement h1Tag : h1Tags) {
-            System.out.println("Texto: " + h1Tag.getText());
+            System.out.println("texto: " + h1Tag.getText());
+        }
+        // Obtener todas las etiquetas de párrafo <p>
+        List<WebElement> pTags = driver.findElements(By.tagName(locator2));
+        System.out.println("Cantidad de etiquetas de párrafo: " + pTags.size());
+
+        // Obtener el título del sitio
+        String pageTitle = driver.getTitle();
+
+        // Validar el título
+        if (pageTitle.equals("Inicio - Banco Central de Chile")) {
+            System.out.println("Título correcto!!");
+        } else {
+            System.out.println("Error en el título");
         }
     }
 
+    
 
 
 }
